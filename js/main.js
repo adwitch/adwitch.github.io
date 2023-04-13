@@ -1,15 +1,8 @@
-const splash = document.querySelector(".splash");
 const nav = document.querySelector("header .nav");
 const menu = document.querySelector(".menu-btn");
 const typed = document.querySelector(".typed");
 const typed_time = 250;
 const typed_await = 1000;
-
-let selected = splash;
-
-setTimeout(() => {
-	setPage("home");
-},/*150*/0);
 
 
 let closeNav = () => {
@@ -26,17 +19,18 @@ for(let n in navbtns){
 		let str = navbtns[n].textContent;
 		try{
 			navbtns[n].addEventListener('click',()=>{
-			closeNav();
 			let elm = ".hero";
 			if(str == "Services") elm = ".services";
 			if(str == "Faq") elm = ".faq";
 			if(str == "Contact Us") elm=".contact";
 			let element = document.querySelector(elm);
 			const y = element.getBoundingClientRect().top + window.scrollY - 60;
+			setTimeout(1000,closeNav);
 			window.scroll({
 				top: y,
 				behavior: 'smooth'
 			});
+			
 		});}catch(e){
 			
 		}
@@ -46,10 +40,6 @@ for(let n in navbtns){
 setTyped(["Rebuild","Upgrade","Remake","Boost"]);
 
 
-function setPage(page){
-	selected.classList.remove('selected');
-	selected = document.querySelector("."+page).classList.add("selected");
-}
 
 function setTyped(texts){
 	typed.textContent = "";

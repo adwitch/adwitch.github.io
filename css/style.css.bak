@@ -54,8 +54,11 @@ header .nav{
 	z-index: 100;
 	flex-direction: column;
 	margin:0;
+	padding: 50px;
+	
 	backdrop-filter: blur(10px);
 	width: 100vw;
+	row-gap: 10px;
 	opacity: 0;
 }
 
@@ -75,16 +78,10 @@ header .nav .fader{
 }
 
 
-header .nav .btns{
-	padding:40px;
-	text-align:center;
-}
-
 header .nav button{
 	color:#000;
 	font-size: 16pt;
 	width: 100%;
-	margin-top:10px;
 	text-align: center;
 	text-decoration: none;;
 	background: #fff;
@@ -115,9 +112,62 @@ header .nav button{
   100% {border-right-color: transparent}
 }
 
-.menu-btn{
+.page{
+	display:none;
+}
+
+.container{
+	margin-top:64px;
+}
+
+.page.selected{
+	display:block;
+}
+
+.splash{
+	padding:0;
 	margin:0;
+}
+
+.splash .adwitch-header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	background: #000;
+	font-size: 12pt;
+}
+
+.splash .adwitch-header .bg{
+	display:flex;
+	width: 30px;
+	height: 40px;
+	position: absolute;
+	backdrop-filter: invert(100%);
+	animation: splsh 3s infinite;
+}
+
+@keyframes splsh{
+	0%{
+		margin-left: -100px;
+	}
+	50%{
+		margin-left: 100px;
+	}
+	100%{
+		
+		margin-left: -100px;
+	}
+}
+
+.menu-btn{
 	scale:0.5;
+	margin:0;
 }
 
 .hero{
