@@ -10,6 +10,19 @@ let closeNav = () => {
 	menu.classList.toggle('open');
 };
 
+function contact(form){
+	let subject = form.elements[0].value;
+	let body = form.elements[1].value;
+	let url = "mailto:info@adwitch.in?"+"subject="+subject+"&&body="+body
+	form.action = url;
+	if(subject != "" && body != ""){
+		window.location.href=url;
+	}else{
+		alert("Check the input !")
+	}
+	return false;
+}
+
 document.querySelector("header .nav .fader").addEventListener("click",closeNav);
 menu.addEventListener('click',closeNav);
 
